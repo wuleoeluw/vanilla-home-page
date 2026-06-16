@@ -23,25 +23,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/components.js"></script>
   <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-bar">
-      <a class="brand" href="./" aria-label="Global Languages Institute home">
-        <span class="brand-mark">GLI</span>
-        <span class="brand-text">Global Languages Institute</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        Menu
-      </button>
-      <nav class="site-nav" id="primary-navigation" aria-label="Primary">
-        <a class="nav-link active" href="./">Home</a>
-        <a class="nav-link" href="institute-for-living-languages/">Institute for Living Languages</a>
-        <a class="nav-link" href="the-great-evolution-game/">The Great Evolution Game</a>
-      </nav>
-    </div>
-  </header>
+  <site-header current-page="home" base-path="./"></site-header>
 
   <main>
     <section class="hero">
@@ -128,15 +114,6 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bar">
-      <p>Global Languages Institute</p>
-      <div class="footer-links">
-        <a href="./">Home</a>
-        <a href="institute-for-living-languages/">Institute for Living Languages</a>
-        <a href="the-great-evolution-game/">The Great Evolution Game</a>
-      </div>
-    </div>
-  </footer>
+  <site-footer base-path="./"></site-footer>
 </body>
 </html>

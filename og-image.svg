@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Dark blue background -->
+  <rect width="1200" height="630" fill="#1f2a44"/>
+  
+  <!-- Accent bar at top -->
+  <rect width="1200" height="8" fill="#6496c8"/>
+  
+  <!-- Main title -->
+  <text x="600" y="260" font-family="Georgia, serif" font-size="72" font-weight="600" fill="#eae7df" text-anchor="middle" dominant-baseline="middle">
+    Global Languages Institute
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="360" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#6496c8" text-anchor="middle" dominant-baseline="middle">
+    Languages as a public good
+  </text>
+</svg>

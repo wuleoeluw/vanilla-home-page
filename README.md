@@ -23,12 +23,15 @@ A clean, mobile-first static website for the Global Languages Institute featurin
 
 ## Features
 
+✓ **Web Components** – Reusable header and footer components (SiteHeader, SiteFooter) eliminate HTML duplication across pages  
+✓ **SEO Optimized** – Canonical links, Open Graph tags, Twitter Cards, robots meta tags, and author metadata  
+✓ **Browser Support** – X-UA-Compatible for IE, color-scheme for dark mode support across all modern browsers  
+✓ **Social Media Ready** – og:image.png (1200x630px) for rich social previews  
 ✓ Internal navigation with active page indicators  
 ✓ Mobile-responsive hamburger menu  
 ✓ Footer with site links on every page  
 ✓ Clean, readable typography (IBM Plex Serif + Inter)  
 ✓ SVG favicon with GLI initials  
-✓ Open Graph and Twitter Card metadata  
 ✓ Relative internal links for GitHub Pages compatibility  
 ✓ No build step required – pure HTML, CSS, and vanilla JS  
 
@@ -37,6 +40,7 @@ A clean, mobile-first static website for the Global Languages Institute featurin
 ```
 vanilla-home-page/
 ├── index.html                          (Home page)
+├── og-image.png                        (Social media preview image)
 ├── institute-for-living-languages/
 │   └── index.html                      (Institute page)
 ├── the-great-evolution-game/
@@ -45,9 +49,46 @@ vanilla-home-page/
 │   ├── css/
 │   │   └── styles.css                  (Shared stylesheet)
 │   └── js/
-│       └── main.js                     (Mobile nav toggle)
+│       ├── components.js               (Web Components: SiteHeader, SiteFooter)
+│       └── main.js                     (Mobile nav toggle, page utilities)
 └── README.md                           (This file)
 ```
+
+## Architecture: Web Components
+
+The site uses native Web Components to eliminate HTML duplication:
+
+### SiteHeader
+- Encapsulates header, navigation, and menu toggle logic
+- Shadow DOM provides style isolation
+- Attributes:
+  - `current-page` – highlights active nav link (`home`, `institute`, `game`)
+  - `base-path` – adjusts href paths based on page location (`./` or `../`)
+
+### SiteFooter
+- Encapsulates footer and navigation links
+- Shadow DOM styling
+- Attribute:
+  - `base-path` – adjusts href paths
+
+**Usage Example:**
+```html
+<site-header current-page="home" base-path="./"></site-header>
+<site-footer base-path="./"></site-footer>
+```
+
+## SEO & Metadata
+
+All pages include:
+- **Canonical URLs** – Prevent duplicate content issues
+- **Open Graph tags** – Better social media sharing (og:title, og:description, og:image, og:url)
+- **Twitter Cards** – Optimized for Twitter/X sharing
+- **Robots meta** – Index and follow directives
+- **Author meta** – Credit to Global Languages Institute
+- **X-UA-Compatible** – Better IE edge support
+- **Color-scheme meta** – Dark mode browser support
+
+**Note:** Update canonical URLs and og:image URL from `globallangjnstl.org` to your actual domain before deployment.
 
 ## Running Locally
 
@@ -87,11 +128,21 @@ The site will be available at `https://your-username.github.io/vanilla-home-page
 
 ## Browser Support
 
-Modern browsers (Chrome, Firefox, Safari, Edge):
+The site is optimized for modern browsers and includes fallbacks for older versions:
+
+**Modern Browsers (Chrome, Firefox, Safari, Edge):**
 - ES6+ JavaScript
 - CSS Grid and Flexbox
 - CSS custom properties (variables)
 - SVG support for favicon
+- Web Components (Custom Elements)
+- Shadow DOM
+
+**Enhanced Compatibility:**
+- `X-UA-Compatible: IE=edge` – Targets IE 11 in edge mode
+- `color-scheme: light dark` – Native dark mode support
+- Responsive design with `clamp()` for fluid typography
+- Mobile-first progressive enhancement
 
 ## License
 

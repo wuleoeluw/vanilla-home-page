@@ -40,7 +40,6 @@ A clean, mobile-first static website for the Global Languages Institute featurin
 ```
 vanilla-home-page/
 ├── index.html                          (Home page)
-├── og-image.png                        (Social media preview image)
 ├── institute-for-living-languages/
 │   └── index.html                      (Institute page)
 ├── the-great-evolution-game/
@@ -48,9 +47,10 @@ vanilla-home-page/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css                  (Shared stylesheet)
-│   └── js/
-│       ├── components.js               (Web Components: SiteHeader, SiteFooter)
-│       └── main.js                     (Mobile nav toggle, page utilities)
+│   ├── js/
+│   │   ├── components.js               (Web Components: SiteHeader, SiteFooter)
+│   │   └── main.js                     (Mobile nav toggle, page utilities)
+│   └── og-image.png                    (Social media preview image 1200x630px)
 └── README.md                           (This file)
 ```
 
